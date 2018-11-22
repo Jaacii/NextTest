@@ -10,7 +10,63 @@
 	      <script src="https://cdn.jsdelivr.net/npm/resonance-audio/build/resonance-audio.min.js"></script>
 
     <script>
-						//Später Script in einzelne Dateien packen. Single responsibility prinzip
+		
+
+
+		if (window.AudioPlayer !== undefined) {
+			audioPlayer = new AudioPlayer()
+		}
+
+		var m_context = new AudioContext()
+		var m_gain = m_context.createGain()
+
+		m_gain.connect(m_context.destination)
+		m_context.listener.setOrientation(0, 0, -1, 0, 1, 0)
+		
+		audioPlayer.onloadstart = function() { ... }
+		audioPlayer.onloaderror = function() { ... }
+		audioPlayer.onloadcomplete = function() { ... }
+ 
+		audioPlayer.load("Cat.wav")
+		audioPlayer.load("bird.wav")
+		audioPlayer.load("wind.wav")
+
+
+		// simplified example
+ 
+m_loader = new XMLHttpRequest()
+m_queue = []
+ 
+function load() {
+    m_loader.open("GET", m_queue[0])
+    m_loader.responseType = "arraybuffer"
+    m_loader.onload = onLoad
+    m_loader.send()
+}
+ 
+function onLoad(event) {
+    var data = m_loader.response
+    var status = m_loader.status
+ 
+    m_loader.abort() // resets the loader
+ 
+    if (status < 400) {
+        m_context.decodeAudioData(data, onDecode)
+    }
+}
+
+
+
+	var sound1 = audioPlayer.create("Cat.wav")
+	var sound2 = audioPlayer.create("bird.wav")
+	var sound3 = audioPlayer.create("wind.wav")
+
+//////
+
+
+
+
+		//Später Script in einzelne Dateien packen. Single responsibility prinzip
 	   var select = 1;
 	   
 	
@@ -47,7 +103,7 @@
 				if (onOff == 0) {
 					audioElement2.src = songs[select];
 				
-					audioElement2.play();
+					audioPlayer.play(sound1, true)
 				
 					//Pic change
 					document.getElementById("playpic").src="pause.png";
@@ -55,7 +111,7 @@
 				}
 				else {
 					
-					audioElement2.pause();     			  
+					audioPlayer.PAUSE(sound1, true)    			  
 					//Pic change
 					document.getElementById("playpic").src="play.png";
 					onOff = 0;
