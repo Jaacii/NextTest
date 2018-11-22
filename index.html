@@ -128,14 +128,14 @@ sound.source.start()
 					audioPlayer.play(sound1, true)
 				
 					//Pic change
-					document.getElementById("playpic").src="pause.png";
+					document.getElementById("btn").src="pause.png";
 					onOff = 1;
 				}
 				else {
 					
 					audioPlayer.stop(sound1)    			  
 					//Pic change
-					document.getElementById("playpic").src="play.png";
+					document.getElementById("btn").src="play.png";
 					onOff = 0;
 				}
 			}
@@ -168,7 +168,7 @@ sound.source.start()
 		 
 		 
 		  <!-- Playbutton	-->
-		 <input id="playbtn" type="button" onclick="playOrPauseSong()"  class="button"> <img id="playpic" src="Pictures/play.png"/> </input> 
+		 <button id="btn" type="button" onclick="playOrPauseSong()"  class="btn"> </button> 
 		 
 		 
 		 
