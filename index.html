@@ -10,102 +10,108 @@
 	      <script src="https://cdn.jsdelivr.net/npm/resonance-audio/build/resonance-audio.min.js"></script>
 
     <script>
-		if (window.AudioPlayer === undefined) {
-		setStatus("Sorry, your web browser cannot run this demo")
-		return
-}
-		
-		
-		
-		var audioPlayer = new AudioPlayer();
 
-		
-		audioPlayer.onloadcomplete = function() {
-		window.console.debug("Loaded.")
-		
-		audioPlayer.onloadstart = null
-		audioPlayer.onloaderror = null
-		audioPlayer.onloadcomplete = null
-		
-		start()
-	}
 
-		
-		
-		
-		
-		
-		if (window.AudioPlayer !== undefined) {
-			audioPlayer = new AudioPlayer()
+		var player = new AudioPlayer(); 
+	
+		player.onloadstart = function() {
+			window.console.debug("Loading.")
 		}
-
-		var m_context = new AudioContext()
-		var m_gain = m_context.createGain()
-
-		m_gain.connect(m_context.destination)
-		m_context.listener.setOrientation(0, 0, -1, 0, 1, 0)
+		player.onloaderror = function() {
+			if (player.errorType === player.IO_ERROR) {
+				setStatus("Sorry, the demo resource files failed to load")
+		} 	else if (player.errorType === player.DECODING_ERROR) {
+				setStatus("Sorry, your web browser cannot run this demo")
+			}
+			window.console.debug(player.errorText)
+		}
+		player.onloadcomplete = function() {
+			window.console.debug("Loaded.")
 		
-	/*	audioPlayer.onloadstart = function() { ... }
-		audioPlayer.onloaderror = function() { ... }
-		audioPlayer.onloadcomplete = function() { ... }*/
- 
+			player.onloadstart = null
+			player.onloaderror = null
+			player.onloadcomplete = null
+			
+			start()
+		}
+		
+		player.load("Cat.wav")
+		player.load("bird.wav")
+		player.load("wind.wav")
+		
+		
+		var songs = [];
+		
+		
+		var context = new AudioContext();
+		var gain = context.createGain();
+		
+		gain.connect(context.destination);
+		
+		context.listener.setOrientation (0,0,-1,0,1,0);
+	
+	
+	
+	
+	
+	
+	
+
+
+
 		audioPlayer.load("Cat.wav")
 		audioPlayer.load("bird.wav")
 		audioPlayer.load("wind.wav")
 
 
-		// simplified example
- 
-m_loader = new XMLHttpRequest()
-m_queue = []
- 
-function load() {
-    m_loader.open("GET", m_queue[0])
-    m_loader.responseType = "arraybuffer"
-    m_loader.onload = onLoad
-    m_loader.send()
-}
- 
-function onLoad(event) {
-    var data = m_loader.response
-    var status = m_loader.status
- 
-    m_loader.abort() // resets the loader
- 
-    if (status < 400) {
-        m_context.decodeAudioData(data, onDecode)
-    }
-}
-
-	sound.source = m_context.createBufferSource()
-sound.panner = m_context.createPanner()
- 
-sound.source.buffer = sound.buffer
-sound.source.loop = loop
-sound.source.onended = onSoundEnded
- 
-// This is a bit of a hack but we need to reference the sound
-// object in the onSoundEnded event handler, and doing things
-// this way is more optimal than binding the handler.
-sound.source.sound = sound
-             
-sound.panner.panningModel = "HRTF"
-sound.panner.distanceModel = "linear"
-sound.panner.setPosition(sound.x, sound.y, sound.z)
- 
-sound.source.connect(sound.panner)
-sound.panner.connect(m_gain)
- 
-sound.source.start()
-
-
-
-
-	var sound1 = audioPlayer.create("Cat.wav")
-	var sound2 = audioPlayer.create("bird.wav")
-	var sound3 = audioPlayer.create("wind.wav")
+	
 
 //////
+
+		function start() { 
+		
+		sounds.push(player.create("Cat.wav"))
+		sounds.push(player.create("bird.wav"))
+		sounds.push(player.create("wind.wav"))
+		
+		
+		player.play(sounds[0], true)
+		
+		player.setZ (sounds[0], -5.0);
+		
+		//window.requestAnimationFrame(update)					77UPDATE FEHLT NOCH
+
+		//demoStarted = true
+		
+		
+		
+		window.console.debug("Started.")
+		}
+
+
+		function randomizeLocation () {
+		var i = 1 // The first sound is looping so ignore it.
+		var n = sounds.length
+
+		while (i < n) {
+			var snd = sounds[i]
+
+			if (player.isPlaying(snd) === false) {
+				if (Math.random() >= 0.95) {
+					var x = -150 + 300 * Math.random()
+					var z = -150 + 300 * Math.random()
+
+					player.setX(snd, x)
+					player.setZ(snd, z)
+					player.play(snd)
+				}
+}				i++;
+		}
+
+
+		
+		
+		
 
 
 
@@ -145,19 +151,12 @@ sound.source.start()
 				
 				
 				if (onOff == 0) {
-					audioElement2.src = songs[select];
-				
-					audioPlayer.play(sound1, true)
-				
-					//Pic change
-					document.getElementById("btn").src="pause.png";
+					player.setVolume(1.0, 0.5);
 					onOff = 1;
 				}
 				else {
 					
-					audioPlayer.stop(sound1)    			  
-					//Pic change
-					document.getElementById("btn").src="play.png";
+					player.setVolume(0.0);
 					onOff = 0;
 				}
 			}
@@ -226,7 +225,7 @@ sound.source.start()
 		 
 			 
 			 <div> Volume
-                <input type="range" id="volumeslider" class="slider" min="0" max="100" value="10">
+                <input type="range" id="volumeslider" class="slider" min="0" max="100" value="50">
 				 <span id="volumeOutput" class="output">0 dB</span>
             </div>
 			<div> Gain
