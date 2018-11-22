@@ -55,6 +55,28 @@ function onLoad(event) {
     }
 }
 
+	sound.source = m_context.createBufferSource()
+sound.panner = m_context.createPanner()
+ 
+sound.source.buffer = sound.buffer
+sound.source.loop = loop
+sound.source.onended = onSoundEnded
+ 
+// This is a bit of a hack but we need to reference the sound
+// object in the onSoundEnded event handler, and doing things
+// this way is more optimal than binding the handler.
+sound.source.sound = sound
+             
+sound.panner.panningModel = "HRTF"
+sound.panner.distanceModel = "linear"
+sound.panner.setPosition(sound.x, sound.y, sound.z)
+ 
+sound.source.connect(sound.panner)
+sound.panner.connect(m_gain)
+ 
+sound.source.start()
+
+
 
 
 	var sound1 = audioPlayer.create("Cat.wav")
@@ -111,7 +133,7 @@ function onLoad(event) {
 				}
 				else {
 					
-					audioPlayer.stop(sound1, true)    			  
+					audioPlayer.stop(sound1)    			  
 					//Pic change
 					document.getElementById("playpic").src="play.png";
 					onOff = 0;
