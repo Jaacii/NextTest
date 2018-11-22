@@ -10,9 +10,31 @@
 	      <script src="https://cdn.jsdelivr.net/npm/resonance-audio/build/resonance-audio.min.js"></script>
 
     <script>
+		if (window.AudioPlayer === undefined) {
+		setStatus("Sorry, your web browser cannot run this demo")
+		return
+}
 		
+		
+		
+		var audioPlayer = new AudioPlayer();
 
+		
+		audioPlayer.onloadcomplete = function() {
+		window.console.debug("Loaded.")
+		
+		audioPlayer.onloadstart = null
+		audioPlayer.onloaderror = null
+		audioPlayer.onloadcomplete = null
+		
+		start()
+	}
 
+		
+		
+		
+		
+		
 		if (window.AudioPlayer !== undefined) {
 			audioPlayer = new AudioPlayer()
 		}
@@ -23,9 +45,9 @@
 		m_gain.connect(m_context.destination)
 		m_context.listener.setOrientation(0, 0, -1, 0, 1, 0)
 		
-		audioPlayer.onloadstart = function() { ... }
+	/*	audioPlayer.onloadstart = function() { ... }
 		audioPlayer.onloaderror = function() { ... }
-		audioPlayer.onloadcomplete = function() { ... }
+		audioPlayer.onloadcomplete = function() { ... }*/
  
 		audioPlayer.load("Cat.wav")
 		audioPlayer.load("bird.wav")
