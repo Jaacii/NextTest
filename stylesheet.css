@@ -1,13 +1,28 @@
 /*css*/
 
 body {
+	background-color: #83677B;
 	
+}
+
+/*Noisemaker*/
+.Noisemaker {
+	margin-right: 10px;
+	margin-left : ;
+	border: 3px gray68;
+	float: left;
+	width: 330px;
+	height: 230px;				/*höhe */
+			
+	display:  inline-block;		/*positioniert sich nebeneinander wenn möglich */
+	background-color: #501B1D;
+	text-align: center;
 	
 }
 
 
 /*PlayButton*/
-.btn {
+.button {
 	float: both;
 	width: 180px;
 	height: 180px;
@@ -21,8 +36,28 @@ body {
 
 
 
+/*3DAudio*/
+.room {
+	display:  inline-block;	
+	background: #64485C;
+	height: 100%;
+	width: 16%;	
+	float: both;
+	margin-left: 730px;  /*Die Anordnung zur Mitte geht auch anders und genauer. Sollte später noichmal geändert werden*/
+	margin-top: 30px;	
+}
 
 
+
+/*Equalizer*/
+.Equalizer {
+	display:  inline-block;		/*positioniert sich nebeneinander wenn möglich */
+	/*background-color: Blue ;*/
+	float: both;
+	width: 90%;
+	height: 460px;
+	text-align: center;
+}
 
 .slider {
 	text-align: center;

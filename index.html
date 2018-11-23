@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
     <head>
-	<title>nexttest</title>
+	<title>Visual-Soundilizer</title>
 	<link rel="stylesheet" type="text/css" href=stylesheet.css>
 	<meta charset= "utf-8">
 	
@@ -10,121 +10,58 @@
 	      <script src="https://cdn.jsdelivr.net/npm/resonance-audio/build/resonance-audio.min.js"></script>
 
     <script>
-
-
-		var player = new AudioPlayer(); 
-	
-		player.onloadstart = function() {
-			window.console.debug("Loading.")
-		}
-		player.onloaderror = function() {
-			if (player.errorType === player.IO_ERROR) {
-				setStatus("Sorry, the demo resource files failed to load")
-		} 	else if (player.errorType === player.DECODING_ERROR) {
-				setStatus("Sorry, your web browser cannot run this demo")
-			}
-			window.console.debug(player.errorText)
-		}
-		player.onloadcomplete = function() {
-			window.console.debug("Loaded.")
-		
-			player.onloadstart = null
-			player.onloaderror = null
-			player.onloadcomplete = null
-			
-			start()
-		}
-		
-		player.load("Cat.wav")
-		player.load("bird.wav")
-		player.load("wind.wav")
-		
-		
-		var songs = [];
-		
-		
-		var context = new AudioContext();
-		var gain = context.createGain();
-		
-		gain.connect(context.destination);
-		
-		context.listener.setOrientation (0,0,-1,0,1,0);
-	
-	
-	
-	
-	
-	
-	
-
-
-
-		audioPlayer.load("Cat.wav")
-		audioPlayer.load("bird.wav")
-		audioPlayer.load("wind.wav")
-
-
-	
-
-//////
-
-		function start() { 
-		
-		sounds.push(player.create("Cat.wav"))
-		sounds.push(player.create("bird.wav"))
-		sounds.push(player.create("wind.wav"))
-		
-		
-		player.play(sounds[0], true)
-		
-		player.setZ (sounds[0], -5.0);
-		
-		//window.requestAnimationFrame(update)					77UPDATE FEHLT NOCH
-
-		//demoStarted = true
-		
-		
-		
-		window.console.debug("Started.")
-		}
-
-
-		function randomizeLocation () {
-		var i = 1 // The first sound is looping so ignore it.
-		var n = sounds.length
-
-		while (i < n) {
-			var snd = sounds[i]
-
-			if (player.isPlaying(snd) === false) {
-				if (Math.random() >= 0.95) {
-					var x = -150 + 300 * Math.random()
-					var z = -150 + 300 * Math.random()
-
-					player.setX(snd, x)
-					player.setZ(snd, z)
-					player.play(snd)
-				}
-}				i++;
-		}
-
-
-		
-		
-		
-
-
-
-
-		//Später Script in einzelne Dateien packen. Single responsibility prinzip
+						//Später Script in einzelne Dateien packen. Single responsibility prinzip
 	   var select = 1;
 	   
-	
+		//---------- Resonance Audio
+
+        var x = 0.0;
+        var y = 0.0;
+        var z = 0.0;
+
+       
+        let audioContext = new AudioContext();
+
+        // first-order Ambisonic Resonance Audio scene 
+        let resonanceAudioScene = new ResonanceAudio(audioContext);
+
+        // Connect the scene’s binaural output to stereo out.
+        resonanceAudioScene.output.connect(audioContext.destination);
+
+		//Raum Größe und Material
+        let roomDimensions = {
+            width: 3.1,
+            height: 2.5,
+            depth: 3.4,
+        };
+
+       
+			let roomMaterials = {
+            
+            left: 'metal',
+            right: 'curtain-heavy',
+            front: 'curtain-heavy',
+            back: 'curtain-heavy',
+            // Room floor
+            down: 'grass',
+            // Room ceiling
+            up: 'grass',
+        };
+
+        
+        resonanceAudioScene.setRoomProperties(roomDimensions, roomMaterials);
+		
 		
 		//
 		var songs = ["Cat.wav","bird.wav","wind.wav"];
  
-       
+        let audioElement2 = document.createElement('audio');
+		
+        audioElement2.loop = true;
+        let audioElementSource2 = audioContext.createMediaElementSource(audioElement2);
+        let source2 = resonanceAudioScene.createSource();
+        audioElementSource2.connect(source2.input);
+        source2.setPosition(x,y,z);
         
 
 
@@ -151,12 +88,19 @@
 				
 				
 				if (onOff == 0) {
-					player.setVolume(1.0, 0.5);
+					audioElement2.src = songs[select];
+				
+					audioElement2.play();
+				
+					//Pic change
+					document.getElementById("playpic").src="pause.png";
 					onOff = 1;
 				}
 				else {
 					
-					player.setVolume(0.0);
+					audioElement2.pause();     			  
+					//Pic change
+					document.getElementById("playpic").src="play.png";
 					onOff = 0;
 				}
 			}
@@ -189,7 +133,7 @@
 		 
 		 
 		  <!-- Playbutton	-->
-		 <button id="btn" type="button" onclick="playOrPauseSong()"  class="btn"> </button> 
+		 <input id="playbtn" type="button" onclick="playOrPauseSong()"  class="button"> <img id="playpic" src="Pictures/play.png"/> </input> 
 		 
 		 
 		 
@@ -225,7 +169,7 @@
 		 
 			 
 			 <div> Volume
-                <input type="range" id="volumeslider" class="slider" min="0" max="100" value="50">
+                <input type="range" id="volumeslider" class="slider" min="0" max="100" value="10">
 				 <span id="volumeOutput" class="output">0 dB</span>
             </div>
 			<div> Gain
