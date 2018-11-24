@@ -6,20 +6,17 @@ body {
 }
 
 
-.sourceinteraction {
-	
-	
-}
 
 
-.Moveup {
+
+.MoveY {
 	width: 150px;
 	height: 150px;	
 	margin-right: 160px;
 	margin-left:160px;
 	float: down;
 }
-.Move {
+.MoveX {
 	width: 150px;
 	height: 150px;	
 	float: left;
