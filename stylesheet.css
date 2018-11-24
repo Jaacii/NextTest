@@ -13,13 +13,13 @@ body {
 	width: 150px;
 	height: 150px;	
 	margin-right: 160px;
-	margin-left:160px;
+	margin-left:161px;
 	float: down;
 }
 .MoveX {
 	width: 150px;
 	height: 150px;	
-	float: left;
+	
 	margin-right: 5px;
 	margin-left:5px;
 }
