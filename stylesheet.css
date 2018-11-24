@@ -11,6 +11,13 @@ body {
 	
 }
 
+
+.Moveup {
+	width: 150px;
+	height: 150px;	
+	margin-right: 160px;
+	margin-left:160px;
+}
 .Move {
 	width: 150px;
 	height: 150px;	
