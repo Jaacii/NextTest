@@ -5,9 +5,9 @@
 	<link rel="stylesheet" type="text/css" href=stylesheet.css>
 	<meta charset= "utf-8">
 	
-	<!-- Evtl ist die doppelte resonance implimierung unnötig -->
+	<!--  -->
 	 
-	      <script src="https://cdn.jsdelivr.net/npm/resonance-audio/build/resonance-audio.min.js"></script>
+	      <script src="https://cdn.jsdelivr.net/npm/resonance-audio/build/resonance-audio.min.js"></script> <!-- google resonance audio -->
 
     <script>
 						//Später Script in einzelne Dateien packen. Single responsibility prinzip
@@ -91,14 +91,15 @@
 					audioElement2.src = songs[select];
 				
 					audioElement2.play();
-				
+					audioElement2.volume = volumeslider.value / 100;
 					//Pic change
 					document.getElementById("playpic").src="pause.png";
 					onOff = 1;
 				}
 				else {
 					
-					audioElement2.pause();     			  
+					audioElement2.pause(); 
+					audioElement2.volume = 0;		//schummeltaktik, weil es manchmal die audio nicht pausiert
 					//Pic change
 					document.getElementById("playpic").src="play.png";
 					onOff = 0;
