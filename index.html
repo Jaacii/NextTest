@@ -53,7 +53,7 @@
 		
 		
 		//
-		var songs = ["Cat.wav","bird.wav","wind.wav"];
+		var songs = ["Audio/Cat.wav","Audio/bird.wav","Audio/wind.wav"];
  
         let audioElement2 = document.createElement('audio');
 		
@@ -133,7 +133,7 @@
 		 
 		 
 		  <!-- Playbutton	-->
-		 <input id="playbtn" type="button" onclick="playOrPauseSong()"  class="button"> <img id="playpic" src="Pictures/play.png"/> </input> 
+		 <input id="playbtn" type="button" onclick="playOrPauseSong()"  class="button">  </input> 
 		 
 		 
 		 
@@ -207,7 +207,8 @@
 		 </div>
 		 
 		 <script>
-		  var Ycounter =1;
+				//MoveButtons     funktioniert scheinbar noch nicht
+		 var Ycounter =1;
 		  var Xcounter =1;
 		  var Zcounter =1;
 		 function move(direction) {
@@ -274,35 +275,21 @@
                 <input type="range" id="middleslider" class="slider" min="0" max="100" value="0">
 				 <span id="middleOutput" class="output">0 ?</span>
             </div>
-			<div> Treble
-                <input type="range" id="trebleslider" class="slider" min="0" max="100" value="0">
-				 <span id="trebleOutput" class="output">0 ?</span>
-            </div>
-			<div> Seek
-                <input type="range" id="seekslider" class="slider" min="0" max="100" value="0">
-				 <span id="reverbOutput" class="output">0 ?</span>
-            </div>
+			
+			
 			Reverb?
 		 </div>
 			
 		<script>
-		var seekslider, volumeslider, seeking=false, seekto;
+		var volumeslider;
 	
 	
 		volumeslider = document.getElementById("volumeslider");
 		volumeslider.addEventListener("mousemove", setvolume);
-		seekslider = document.getElementById("seekslider");
-		seekslider.addEventListener("mousedown", function(event){ seeking=true; seek(event); });
-		seekslider.addEventListener("mousemove", function(event){ seek(event); });
-		seekslider.addEventListener("mouseup",function(){ seeking=false; });
+		
 
 			
-		function seek(event){
-			if(seeking){
-				seekslider.value = event.clientX - seekslider.offsetLeft;
-				seekto = audioElement2.duration * (seekslider.value / 100);
-				audioElement2.currentTime = seekto;
-			}
+		f
 		}
 		function setvolume(){
 			audioElement2.volume = volumeslider.value / 100;
