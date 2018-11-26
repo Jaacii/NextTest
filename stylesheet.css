@@ -50,7 +50,7 @@ body {
 	margin-right: 800px;
 	margin-top: 30px;	
 	font-size:24px;
-	background-image: "url(Pictures/play.png)";
+	background: "url(Pictures/play.png)" no-repeat scroll 0 0 transparent;
 	
 }
 
