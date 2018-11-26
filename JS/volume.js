@@ -2,7 +2,7 @@
 	
 	
 	
-	
+	/*
 	
 	
 	
@@ -48,10 +48,10 @@ function changeParameter() {
 }
 	
 	
+	*/
 	
 	
 	
-	/*
 	var sliders = document.getElementsByClassName("slider");
 	filter = audioContext.createBiquadFilter();
 	source.connect(filter);
@@ -108,7 +108,7 @@ function makeDistortionCurve(amount) {
     
     return curve;
 };
-*/
+
 	
 		
 		
