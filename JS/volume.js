@@ -4,6 +4,8 @@
 
   var  sliders = document.getElementsByClassName("slider");
   var  filter = audioContext.createBiquadFilter();
+  var distortion = context.createWaveShaper();
+distortion.connect(filter);
 	audioElementSource2.connect(filter);
 	filter.connect(audioContext.destination);
 
@@ -38,15 +40,7 @@ function sliderchange() {
 	
 	
 
-
-
-var distortion = audioContext.createWaveShaper();
-
-
-audioElementSource2.connect(distortion);
-distortion.connect(audioContext.destination);
-
-distortion.curve = makeDistortionCurve(0);
+distortion.curve = makeDistortionCurve(6);
 distortion.oversample = "4x";
 
 function makeDistortionCurve(amount) {    
