@@ -18,7 +18,7 @@ for (var i = 0; i < sliders.length; i++) {
 function changeParameter() {
     switch(this.id) {
         case "volumeslider":
-            audioElement2.volume = this.valuevalue / 100;
+            audioElement2.volume = volumeslider.value / 100;
             document.getElementById("volumeOutput").innerHTML = this.value + " dB";
             break;
         case "gainslider":
