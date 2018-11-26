@@ -27,7 +27,7 @@
 			filter.Q.value = this.value;
 			 document.getElementById("qualityOutput").innerHTML = this.value;
 			break;
-			case "distortion":
+			case "distortionslider":
 			document.getElementById("distortionOutput").innerHTML = this.value;
 			break;
 			

@@ -20,7 +20,7 @@
 		 
 	
 	</head>
-	<!-- Page Elements	-->
+	
 		<body>
 		
 		<!-- Noisemaker	-->
@@ -38,67 +38,18 @@
 		 
 		 
 		 
+		 
 		  <!-- Playbutton	-->
-		 <button id="playbtn2" type="button" onclick="playOrPauseSong()"  class="playbtn" value="play" >  </button> 
+		 <input id="playbtn" type="button" onclick="playOrPauseSong()"  class="playbtn" value="play">  </input> 
 		 
 		 
-		 <button id="playbtn"  onclick="playOrPauseSong()"><img src="Pictures/play.png" width="30px" height= "30px"></button>
-	
-
-	
 		 
 
 		 
-		 
-		 
-		 <!-- Room for 3D Audio		-->
-		 <!--<div class= "room">
-			<img src="volume.svg" id="sourceAIcon" hidden>  
-			<img src="person.svg" id="listenerIcon" hidden>
-				<canvas id="canvas"></canvas>
 		
-				<script src="audio3d.js"></script>
-				 <script src="https://cdn.jsdelivr.net/npm/resonance-audio/build/resonance-audio.min.js"></script>		<!-- google resonance audio sdk	-->
-			 <!--	<script src="canvasControl.js"></script>
-		 </div>	
 		 
 		 
-		 
-		 
-		 var snd = sounds[i]
-
-			if (player.isPlaying(snd) === false) {
-				if (Math.random() >= 0.95) {
-					var x = -150 + 300 * Math.random()
-					var z = -150 + 300 * Math.random()
-
-					player.setX(snd, x)
-					player.setZ(snd, z)
-					player.play(snd)
-		 
-		 
-		 
-		 
-		 
-		 
-		 // Sets the position of a sound.
-		//
-		// src: The sound identifier.
-		// x:   The X position.
-		// y:   The Y position.
-		// z:   The Z position.
-		//
-		this.setPosition = function(snd, x, y, z) {
-			m_this.setX(snd, x)
-			m_this.setY(snd, y)
-			m_this.setZ(snd, z)
-		}
-
-		 
-		 
-		 
-		 + Regler für Z
-		 -->
+		 <!-- move AudioSource	-->
 		 
 		 
 		 <input id="up" type="button" onclick="move(0)"  class="MoveY" value="forward"> </input> 
@@ -110,6 +61,7 @@
 		 </div>
 		 <input id="down" type="button" onclick="move(4)"  class="MoveY" value="backward"> </input>
 		 
+		 <!-- Evtl regler für Z achse?	-->
 		 
 		 
 		 
@@ -117,27 +69,25 @@
 		 
 		 
 		 
-		 
-
-		<!-- Equalizer	-->
+<!-- Equalizer	-->
 		 <div class="Equalizer">
 		  <h1> Equalizer </h1>
 			 
 			 <div> Volume
-                <input type="range" id="volumeslider" class="slider" min="0" max="100" value="10">
+                <input type="range" id="volumeslider" class="slider" min="0" max="100" value="50">
 				 <span id="volumeOutput" class="output">0 dB</span>
             </div>
 			<div> Gain
                 <input type="range" id="gainslider" class="slider" min="-50" max="50" value="0">
 				 <span id="gainOutput" class="output">0 dB</span>
             </div>
-			<div> Bass
-                <input type="range" id="bassslider" class="slider" min="0" max="100" value="0">
-				 <span id="qualityOutput" class="output">0 ?</span>
+			<div> Quality
+                <input type="range" id="qualityslider" class="slider" min="0" max="100" value="0">
+				 <span id="qualityOutput" class="output">0</span>
             </div>
-			<div> Middle
-                <input type="range" id="distortionOutput" class="slider" min="0" max="100" value="0">
-				 <span id="middleOutput" class="output">0 ?</span>
+			<div> Distortion
+                <input type="range" id="distortionslider" class="slider" min="0" max="100" value="0">
+				 <span id="distortionOutput" class="output">0</span>
             </div>
 			
 			
