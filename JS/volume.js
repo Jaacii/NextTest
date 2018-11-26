@@ -1,4 +1,57 @@
 //var volumeslider;
+	
+	
+	
+	
+	
+	
+	var context = new AudioContext(),
+    sliders = document.getElementsByClassName("slider"),
+    playStopButton = document.getElementById("playStopButton"),
+    selectList =document.getElementById("selectList"),
+    isPlaying = false,
+    sound = new Audio("../sounds/sound.wav"),
+    source = context.createMediaElementSource(sound),
+    filter = context.createBiquadFilter();
+    
+sound.loop = true;
+source.connect(filter);
+filter.connect(context.destination);
+
+for (var i = 0; i < sliders.length; i++) {
+    sliders[i].addEventListener("mousemove", changeParameter);
+}
+
+selectList.addEventListener("change", function() {
+    filter.type = selectList.options[selectList.selectedIndex].value;
+});
+
+function changeParameter() {
+    switch(this.id) {
+        case "frequencySlider":
+            filter.frequency.value = this.value;
+            document.getElementById("frequencyOutput").innerHTML = this.value + " Hz";
+            break;
+        case "detuneSlider":
+            filter.detune.value = this.value;
+            document.getElementById("detuneOutput").innerHTML = this.value + " Cents";
+            break;
+        case "qSlider":
+            filter.Q.value = this.value;
+            document.getElementById("qOutput").innerHTML = this.value;
+            break;
+        case "gainSlider":
+            filter.gain.value = this.value;
+            document.getElementById("gainOutput").innerHTML = this.value + " dB";
+            break;
+    }
+}
+	
+	
+	
+	
+	
+	/*
 	var sliders = document.getElementsByClassName("slider");
 	filter = audioContext.createBiquadFilter();
 	source.connect(filter);
@@ -55,7 +108,7 @@ function makeDistortionCurve(amount) {
     
     return curve;
 };
-
+*/
 	
 		
 		
