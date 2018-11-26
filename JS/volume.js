@@ -7,7 +7,7 @@ filter.connect(audioContext.destination);
 
 //Eventlistener adden
 for (var i = 0; i < sliders.length; i++) {
-    sliders[i].addEventListener("mousemove", sliderchange);
+    sliders[i].addEventListener("mousemove", sliderchange());
 }
 
 
@@ -15,7 +15,7 @@ for (var i = 0; i < sliders.length; i++) {
 function sliderchange() {
     switch(this.id) {
         case "volumeslider":
-            audioElement2.volume = volumeslider.value / 100;
+            audioElement2.volume = this.value / 100;
             document.getElementById("volumeOutput").innerHTML = this.value + " dB";
             break;
         case "gainslider":
