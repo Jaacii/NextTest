@@ -9,11 +9,11 @@
     sliders = document.getElementsByClassName("slider"),
     playStopButton = document.getElementById("playStopButton"),
     isPlaying = false,
-    sound = new Audio("../sounds/sound.wav"),
+   
   
     filter = audioContext.createBiquadFilter();
     
-sound.loop = true;
+
 audioElementSource2.connect(filter);
 filter.connect(audioContext.destination);
 
@@ -38,15 +38,43 @@ function sliderchange() {
             document.getElementById("qualityOutput").innerHTML = this.value;
             break;
         case "distortionslider":
-            distortion.curve = makeDistortionCurve(Number(this.value));
-            document.getElementById("distortionOutput").innerHTML = this.value;
+			document.getElementById("distortionOutput").innerHTML = this.value;
+			distortion.curve = makeDistortionCurve(Number(this.value));
             break;
         
     }
 }
 	
-	//distortion
-	var distortion = context.createWaveShaper();
+	
+	
+
+
+
+var distortion = audioContext.createWaveShaper();
+
+
+audioElementSource2.connect(distortion);
+distortion.connect(audioContext.destination);
+
+distortion.curve = makeDistortionCurve(0);
+distortion.oversample = "4x";
+
+function makeDistortionCurve(amount) {    
+    var n_samples = 44100,
+        curve = new Float32Array(n_samples);
+    
+    for (var i = 0; i < n_samples; ++i ) {
+        var x = i * 2 / n_samples - 1;
+        curve[i] = (Math.PI + amount) * x / (Math.PI + (amount * Math.abs(x)));
+    }
+    
+    return curve;
+};
+	
+	
+	
+	//distortion 
+/*	var distortion = context.createWaveShaper();
 audioElementSource2.connect(distortion);
 distortion.connect(context.destination);
 
@@ -63,7 +91,7 @@ function makeDistortionCurve(amount) {
     }
     
     return curve;
-};
+};*/
 	
 	
 	
