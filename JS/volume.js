@@ -1,21 +1,11 @@
 //var volumeslider;
 	
 	
-	
-	
-	
-	
-	
-    sliders = document.getElementsByClassName("slider"),
-    playStopButton = document.getElementById("playStopButton"),
-    isPlaying = false,
-   
-  
-    filter = audioContext.createBiquadFilter();
-    
 
-audioElementSource2.connect(filter);
-filter.connect(audioContext.destination);
+  var  sliders = document.getElementsByClassName("slider");
+  var  filter = audioContext.createBiquadFilter();
+	audioElementSource2.connect(filter);
+	filter.connect(audioContext.destination);
 
 for (var i = 0; i < sliders.length; i++) {
     sliders[i].addEventListener("mousemove", sliderchange);
