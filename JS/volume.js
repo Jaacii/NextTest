@@ -28,10 +28,7 @@ function sliderchange() {
             filter.Q.value = this.value;
             document.getElementById("qualityOutput").innerHTML = this.value;
             break;
-        case "distortionslider":
-			document.getElementById("distortionOutput").innerHTML = this.value;
-			distortion.curve = makeDistortionCurve(Number(this.value));
-            break;
+       
         
     }
 }
