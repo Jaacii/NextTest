@@ -5,6 +5,7 @@
   var  sliders = document.getElementsByClassName("slider");
   var  filter = audioContext.createBiquadFilter();
 
+	
 	audioElementSource2.connect(filter);
 	filter.connect(audioContext.destination);
 
