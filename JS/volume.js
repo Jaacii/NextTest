@@ -47,3 +47,19 @@ function sliderchange() {
 		
 		
 		
+
+    © 
+	
+	
+	
+	
+	
+	
+	
+
+
+	
+
+		
+		
+		
