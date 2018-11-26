@@ -15,9 +15,9 @@
 	distortion.curve = makeDistortionCurve(0);
 	distortion.oversample = "4x";
 
-	function sliderchange () {
+	function sliderchange (id) {
 		
-		switch(this.id) {
+		switch(id) {
 			case "volumeslider":
 			var volumeslider = document.getElementById("volumeslider");
 			audioElement2.volume = volumeslider.value / 100;
