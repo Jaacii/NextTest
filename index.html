@@ -13,7 +13,7 @@
 		  
 		<script src="JS/resonanceAudio.js"></script> 
 		<script src="JS/audioSelect.js"></script> 
-		
+		<script src="JS/play.js"></script> 
 		<script src="JS/moveAudioSource.js"></script> 
 	
 	   
@@ -42,10 +42,10 @@
 		 <button id="playbtn2" type="button" onclick="playOrPauseSong()"  class="playbtn" value="play" >  </button> 
 		 
 		 
-		 <input id="playbtn" type="button"  onclick="playOrPauseSong()"><img src="Pictures/play.png" width="30px" height= "30px"></input>
+		 <button id="playbtn"  onclick="playOrPauseSong()"><img src="Pictures/play.png" width="30px" height= "30px"></button>
 	
 
-	<script src="JS/play.js"></script> 
+	
 		 
 
 		 
@@ -133,10 +133,10 @@
             </div>
 			<div> Bass
                 <input type="range" id="bassslider" class="slider" min="0" max="100" value="0">
-				 <span id="bassOutput" class="output">0 ?</span>
+				 <span id="qualityOutput" class="output">0 ?</span>
             </div>
 			<div> Middle
-                <input type="range" id="middleslider" class="slider" min="0" max="100" value="0">
+                <input type="range" id="distortionOutput" class="slider" min="0" max="100" value="0">
 				 <span id="middleOutput" class="output">0 ?</span>
             </div>
 			
