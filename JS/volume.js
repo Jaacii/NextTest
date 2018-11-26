@@ -45,8 +45,8 @@ function sliderchange() {
     }
 }
 	
-	
-	
+	//distortion
+	var distortion = context.createWaveShaper();
 audioElementSource2.connect(distortion);
 distortion.connect(context.destination);
 
