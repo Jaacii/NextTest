@@ -10,22 +10,20 @@
     playStopButton = document.getElementById("playStopButton"),
     isPlaying = false,
     sound = new Audio("../sounds/sound.wav"),
-    source = audioContext.createMediaElementSource(sound),
+  
     filter = audioContext.createBiquadFilter();
     
 sound.loop = true;
-source.connect(filter);
+audioElementSource2.connect(filter);
 filter.connect(audioContext.destination);
 
 for (var i = 0; i < sliders.length; i++) {
-    sliders[i].addEventListener("mousemove", changeParameter);
+    sliders[i].addEventListener("mousemove", sliderchange);
 }
 
-selectList.addEventListener("change", function() {
-    filter.type = selectList.options[selectList.selectedIndex].value;
-});
 
-function changeParameter() {
+
+function sliderchange() {
     switch(this.id) {
         case "volumeslider":
             filter.frequency.value = this.value;
