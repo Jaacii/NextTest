@@ -1,18 +1,16 @@
-
-
 var sliders = document.getElementsByClassName("slider"),
     filter = audioContext.createBiquadFilter();
     
-
 audioElementSource2.connect(filter);
 filter.connect(audioContext.destination);
 
+//Slidern Eventlistener hinzufügen
 for (var i = 0; i < sliders.length; i++) {
-    sliders[i].addEventListener("mousemove", changeParameter);
+    sliders[i].addEventListener("mousemove", sliderchange);
 }
 
 
-function changeParameter() {
+function sliderchange() {
     switch(this.id) {
         case "volumeslider":
             audioElement2.volume = this.value / 100;
@@ -36,39 +34,6 @@ function changeParameter() {
 
 
 
-
-/*var sliders = document.getElementsByClassName("slider"):
-var filter = audioContext.createBiquadFilter();
-    
-audioElementSource2.connect(filter);
-filter.connect(audioContext.destination);
-
-
-for (var i = 0; i < sliders.length; i++) {
-    sliders[i].addEventListener("mousemove", sliderchange());
-}
-
-
-
-function sliderchange() {
-    switch(this.id) {
-        case "volumeslider":
-            audioElement2.volume = this.value / 100;
-            document.getElementById("volumeOutput").innerHTML = this.value + " dB";
-            break;
-        case "gainslider":
-            filter.gain.value = this.value;
-            document.getElementById("gainOutput").innerHTML = this.value + " dB";		//Evtl mit einem anderen Slider ersetzen?
-            break;
-        case "qualityslider":
-            filter.Q.value = this.value;
-            document.getElementById("qualityOutput").innerHTML = this.value;
-            break;
-        
-    }
-}
-	
-	*/
 	
 	
 	
