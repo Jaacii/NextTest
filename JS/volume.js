@@ -4,7 +4,7 @@
 
   var  sliders = document.getElementsByClassName("slider");
   var  filter = audioContext.createBiquadFilter();
-  var distortion = context.createWaveShaper();
+  var distortion = audioContext.createWaveShaper();
 distortion.connect(filter);
 	audioElementSource2.connect(filter);
 	filter.connect(audioContext.destination);
