@@ -44,16 +44,7 @@ function sliderchange() {
 
 	
 
-		
-		
-		
 
-    © 
-	
-	
-	
-	
-	
 	
 	
 
