@@ -8,7 +8,6 @@
 	
     sliders = document.getElementsByClassName("slider"),
     playStopButton = document.getElementById("playStopButton"),
-    selectList =document.getElementById("selectList"),
     isPlaying = false,
     sound = new Audio("../sounds/sound.wav"),
     source = audioContext.createMediaElementSource(sound),
