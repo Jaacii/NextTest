@@ -5,18 +5,18 @@
 	
 	
 	
-	var context = new AudioContext(),
+	
     sliders = document.getElementsByClassName("slider"),
     playStopButton = document.getElementById("playStopButton"),
     selectList =document.getElementById("selectList"),
     isPlaying = false,
     sound = new Audio("../sounds/sound.wav"),
-    source = context.createMediaElementSource(sound),
-    filter = context.createBiquadFilter();
+    source = audioContext.createMediaElementSource(sound),
+    filter = audioContext.createBiquadFilter();
     
 sound.loop = true;
 source.connect(filter);
-filter.connect(context.destination);
+filter.connect(audioContext.destination);
 
 for (var i = 0; i < sliders.length; i++) {
     sliders[i].addEventListener("mousemove", changeParameter);
