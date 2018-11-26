@@ -1,8 +1,12 @@
 //var volumeslider;
-	
+	var sliders = document.getElementsByClassName("slider");
 	filter = audioContext.createBiquadFilter();
 	source.connect(filter);
 	filter.connect(audioContext.destination);
+	
+	for (var i = 0; i < sliders.length; i++) {
+    sliders[i].addEventListener("mousemove", sliderchange());
+}
 	
 	var distortion = audioContext.createWaveShaper();
 	source.connect(distortion);
@@ -16,7 +20,7 @@
 		switch(this.id) {
 			case "volumeslider":
 			var volumeslider = document.getElementById("volumeslider");
-			volumeslider.addEventListener("mousemove", setvolume);
+			audioElement2.volume = volumeslider.value / 100;
 			document.getElementById("volumeOutput").innerHTML = this.value + " Volume";
 			break;
 			case "gainslider":
@@ -55,7 +59,4 @@ function makeDistortionCurve(amount) {
 	
 		
 		
-		function setvolume(){
-			audioElement2.volume = volumeslider.value / 100;
-		}
-
+		
