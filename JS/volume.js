@@ -5,9 +5,9 @@
   var  sliders = document.getElementsByClassName("slider");
   var  filter = audioContext.createBiquadFilter();
   var distortion = audioContext.createWaveShaper();
-	distortion.connect(filter);
-	audioElementSource2.connect(distortion);
-	filter.connect(audioContext.destination);
+	distortion.connect(distortion);
+	audioElementSource2.connect(filter);
+	distortion.connect(audioContext.destination);
 
 for (var i = 0; i < sliders.length; i++) {
     sliders[i].addEventListener("mousemove", sliderchange);
