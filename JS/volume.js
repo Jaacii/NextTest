@@ -2,7 +2,7 @@
 	
 	
 	
-	/*
+	
 	
 	
 	
@@ -28,29 +28,30 @@ selectList.addEventListener("change", function() {
 
 function changeParameter() {
     switch(this.id) {
-        case "frequencySlider":
+        case "volumeslider":
             filter.frequency.value = this.value;
-            document.getElementById("frequencyOutput").innerHTML = this.value + " Hz";
+            document.getElementById("volumeOutput").innerHTML = this.value + " Hz";
             break;
-        case "detuneSlider":
-            filter.detune.value = this.value;
-            document.getElementById("detuneOutput").innerHTML = this.value + " Cents";
-            break;
-        case "qSlider":
-            filter.Q.value = this.value;
-            document.getElementById("qOutput").innerHTML = this.value;
-            break;
-        case "gainSlider":
+		case "gainslider":
             filter.gain.value = this.value;
             document.getElementById("gainOutput").innerHTML = this.value + " dB";
             break;
+        case "qualityslider":
+            filter.Q.value = this.value;
+            document.getElementById("qualityOutput").innerHTML = this.value;
+            break;
+        case "distortionslider":
+            filter.Q.value = this.value;
+            document.getElementById("distortionOutput").innerHTML = this.value;
+            break;
+        
     }
 }
 	
 	
-	*/
 	
 	
+	/*
 	
 	var sliders = document.getElementsByClassName("slider");
 	filter = audioContext.createBiquadFilter();
@@ -90,12 +91,12 @@ function changeParameter() {
 			
 		}
 	}
-	
+	*/
 		//volumeslider = document.getElementById("volumeslider");		//reagiert plötzlich nicht ?
 		//volumeslider.addEventListener("mousemove", setvolume);
 		
 
-	
+	/*
 
 function makeDistortionCurve(amount) {    
     var n_samples = 44100,
@@ -108,7 +109,7 @@ function makeDistortionCurve(amount) {
     
     return curve;
 };
-
+*/
 	
 		
 		
