@@ -5,7 +5,7 @@
 		  
 		  var x=0, y=0, z =0;
 		  
-		 function move(direction) {
+		 function moveSource(direction) {
 		
 			if (direction === 0) {
 				 y = y + 5 * Ycounter; 
