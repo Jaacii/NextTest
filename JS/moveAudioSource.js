@@ -34,7 +34,12 @@
 			source2.setPosition(0,0,0);
 			audioElement2.play();
 			}
+			updateCoordinates();
 			
-		 
 		 } 
+		 
+		 function updateCoordinates () {
+			 document.getElementById("Xcoordinate").innerHTML = "X: " + x;
+			 document.getElementById("Ycoordinate").innerHTML = "Y: "+ x;
+		 }
 		 
