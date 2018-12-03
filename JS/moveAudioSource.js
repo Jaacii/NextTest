@@ -30,8 +30,10 @@
 			Zcounter =1; 
 			audioElement2.setPosition(0,0,0);
 			audioElement2.play();
-			}
 			
+			}
+			document.getElementById("Xcoordinate").innerHTML=X;
+			document.getElementById("Ycoordinate").innerHTML=Y;
 		 
 		 } 
 		 
