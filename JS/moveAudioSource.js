@@ -7,27 +7,27 @@
 		  
 		 function moveSource(direction) {
 		
-			if (direction === 0) {
+			if (direction === '0') {
 				 y = y + 5 * Ycounter; 
 				source2.setPosition(x,y,z);
 				Ycounter = Ycounter+1;
 			}
-			else if (direction === 4) {
+			else if (direction === '4') {
 				 y = y - 5 * Ycounter; 
 				source2.setPosition(x,y,z);
 				Ycounter = Ycounter-1;
 			}
-			else if (direction === 1) {
+			else if (direction === '1') {
 				 x = x - 5 * Xcounter; 
 				source2.setPosition(x,y,z);
 				Xcounter = Xcounter-1;
 			}
-			else if (direction === 3) {
+			else if (direction === '3') {
 				 x = x + 5 * Ycounter; 
 				source2.setPosition(x,y,z);
 				Ycounter = Ycounter-1;
 			}
-			else if direction === 2) {
+			else if (direction === '2') {
 			Ycounter =1;
 			Xcounter =1;
 			Zcounter =1; 
