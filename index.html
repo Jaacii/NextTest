@@ -76,28 +76,32 @@
 		 if (direction === 0) {
 			
 			y = y+1;
+			document.getElementById("Ycoordinate").textContent='Y: ' + y;
 			}
 		else if (direction === 1) {
 			x = x-1;
-			y = y+1;
+			document.getElementById("Xcoordinate").textContent='X: ' + x;
 			}
 		else if (direction === 2) {
 			x = 0;
 			y = 0;
+			document.getElementById("Xcoordinate").textContent='X: ' + x;
+			document.getElementById("Ycoordinate").textContent='Y: ' + y;
 			}
 		else if (direction === 3) {
 			x = x+1;
-			y = y+1;
+			
+			document.getElementById("Xcoordinate").textContent='X: ' + x;
 			}
 		else if (direction === 4) {
 			
 			y = y-1;
+			document.getElementById("Ycoordinate").textContent='Y: ' + y;
 			}
 			
 			
 			
-			document.getElementById("Xcoordinate").textContent='X: ' + x;
-			document.getElementById("Ycoordinate").textContent='Y: ' + y;
+			
 		 
 		 } 
 		 </script>
