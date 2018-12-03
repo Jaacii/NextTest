@@ -26,7 +26,7 @@
 		else if (direction === 3) {
 			x = x-0.1;;
 			
-			document.getElementById("Xcoordinate").textContent= x * -1;
+			document.getElementById("Xcoordinate").textContent= ((x * -1)*100)/100;
 			resonanceAudioScene.setListenerPosition(x, y, z);
 			}
 		else if (direction === 4) {
