@@ -71,9 +71,14 @@
 		 var Ycounter =1;
 		  var Xcounter =1;
 		  var Zcounter =1;
-		 function moveSource(z) {
+		 function moveSource(direction) {
+		 
+		 if (direction === 1) {
 			x = x+1;
 			y = y+1;
+			}
+			
+			
 			
 			document.getElementById("Xcoordinate").textContent='X: ' + x;
 			document.getElementById("Ycoordinate").textContent='Y: ' + y;
