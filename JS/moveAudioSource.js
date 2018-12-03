@@ -15,7 +15,7 @@
 			}
 		else if (direction === 1) {
 			x = x+0.1;
-			xDisplay = x-1;	//Die X-Achse ist gespiegelt. Darum - statt +
+			xDisplay = x+1;	//Die X-Achse ist gespiegelt. Darum - statt +
 			
 			document.getElementById("Xcoordinate").textContent=  xDisplay ;
 			resonanceAudioScene.setListenerPosition(x, y, z);
@@ -32,7 +32,7 @@
 			}
 		else if (direction === 3) {
 			x = x-0.1;
-			xDisplay + xDisplay + 1;
+			xDisplay + xDisplay - 1;
 			
 			document.getElementById("Xcoordinate").textContent= xDisplay ; 
 			resonanceAudioScene.setListenerPosition(x, y, z);
