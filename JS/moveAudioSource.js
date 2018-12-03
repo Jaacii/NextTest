@@ -32,8 +32,8 @@
 			audioElement2.play();
 			
 			}
-			document.getElementById("Xcoordinate").innerHTML=X;
-			document.getElementById("Ycoordinate").innerHTML=Y;
+			document.getElementById("Xcoordinate").innerHTML=x;
+			document.getElementById("Ycoordinate").innerHTML=y;
 		 
 		 } 
 		 
