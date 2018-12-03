@@ -9,7 +9,10 @@
 
        
         let audioContext = new AudioContext();
-
+//
+		var panner = audioContext.createPanner();
+		
+		
         // first-order Ambisonic Resonance Audio scene 
         let resonanceAudioScene = new ResonanceAudio(audioContext);
 
@@ -44,6 +47,8 @@
 		var songs = ["Audio/Cat.wav","Audio/bird.wav","Audio/wind.wav"];
  
         let audioElement2 = document.createElement('audio');
+		//
+		audioElement2.panner.panningModel = "HRTF"
 		
         audioElement2.loop = true;
         let audioElementSource2 = audioContext.createMediaElementSource(audioElement2);
