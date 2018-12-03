@@ -3,7 +3,7 @@
 		  var Xcounter =1;
 		  var Zcounter =1;
 		  
-		  var x=1, y=1, z =1;
+		 // var x=1, y=1, z =1;
 		  
 		 function moveSource(direction) {
 		

@@ -3,9 +3,9 @@
 	   
 		//---------- Resonance Audio
 
-        var x = 0.0;
-        var y = 0.0;
-        var z = 0.0;
+        var x = 1.0;
+        var y = 1.0;
+        var z = 1.0;
 
        
         let audioContext = new AudioContext();
