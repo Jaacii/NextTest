@@ -2,7 +2,7 @@
 		 var Ycounter =1;
 		  var Xcounter =1;
 		  var Zcounter =1;
-		 function move(direction) {
+		 function moveSource(direction) {
 		
 			if (direction === 0) {
 				 y = y + 5 * Ycounter; 
