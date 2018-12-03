@@ -33,12 +33,11 @@
 			
 			y = y-1;
 			document.getElementById("Ycoordinate").textContent= y;
-			
+			resonanceAudioScene.setListenerPosition(x, y, z);
 			
 			}
 			
-			//audioElement2.setPosition(x,y,z);						doesn´t work
-			//audioElement2.play();
+			
 			
 			
 		 
