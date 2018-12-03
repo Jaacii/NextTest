@@ -3,9 +3,9 @@
 	   
 		//---------- Resonance Audio
 
-        var x = 1.0;
-        var y = 1.0;
-        var z = 1.0;
+        var x = 0.0;
+        var y = 0.0;
+        var z = 0.0;
 
        
         let audioContext = new AudioContext();
@@ -23,17 +23,17 @@
             depth: 3.4,
         };
 
-       //room -> ourdoors
+       
 			let roomMaterials = {
             
-            left: 'transparent',			
-            right: 'transparent',
-            front: 'transparent',
-            back: 'transparent',
+            left: 'metal',
+            right: 'curtain-heavy',
+            front: 'curtain-heavy',
+            back: 'curtain-heavy',
             // Room floor
-            down: 'transparent',
+            down: 'grass',
             // Room ceiling
-            up: 'transparent',
+            up: 'grass',
         };
 
         
@@ -44,21 +44,10 @@
 		var songs = ["Audio/Cat.wav","Audio/bird.wav","Audio/wind.wav"];
  
         let audioElement2 = document.createElement('audio');
-		//audioElement.src = '';
-
+		
         audioElement2.loop = true;
         let audioElementSource2 = audioContext.createMediaElementSource(audioElement2);
         let source2 = resonanceAudioScene.createSource();
         audioElementSource2.connect(source2.input);
         source2.setPosition(x,y,z);
         
-
-		
-		
-		function sourcePosition() {
-			
-			
-} 
-			
-			source2.setPosition(x,y,z)
-		}
