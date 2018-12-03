@@ -76,27 +76,30 @@
 		 if (direction === 0) {
 			
 			y = y+1;
+			audioElement2.setPosition(x,y,z);
 			document.getElementById("Ycoordinate").textContent= y;
 			}
 		else if (direction === 1) {
 			x = x-1;
+			audioElement2.setPosition(x,y,z);
 			document.getElementById("Xcoordinate").textContent=  x;
 			}
 		else if (direction === 2) {
 			x = 0;
 			y = 0;
+			audioElement2.setPosition(x,y,z);
 			document.getElementById("Xcoordinate").textContent= x;
 			document.getElementById("Ycoordinate").textContent=  y;
 			}
 		else if (direction === 3) {
-			x = x + 5 * Xcounter; 
-			//x = x+1;
-			
+			x = x+1;
+			audioElement2.setPosition(x,y,z);
 			document.getElementById("Xcoordinate").textContent= x;
 			}
 		else if (direction === 4) {
 			
 			y = y-1;
+			audioElement2.setPosition(x,y,z);
 			document.getElementById("Ycoordinate").textContent= y;
 			}
 			
