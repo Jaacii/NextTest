@@ -60,8 +60,8 @@
 			<input id="right" type="button" onclick="moveSource(3)"  class="MoveX" value="right"> </input>
 		 </div>
 		 <input id="down" type="button" onclick="moveSource(4)"  class="MoveY" value="backward"> </input>
-		 X: <span id="Xcoordinate" class="Xloc">0</span> </br>
-		 Y: <span id="Ycoordinate" class="YLoc">0</span>
+		<div>  X: <span id="Xcoordinate" class="Xloc">0</span>  </div>
+		<div>  Y: <span id="Ycoordinate" class="YLoc">0</span>   </div> </br>
 		 
 		 <!-- Evtl regler für Z achse?	-->
 		 
@@ -91,12 +91,12 @@
 		else if (direction === 3) {
 			x = x+1;
 			
-			document.getElementById("Xcoordinate").textContent='X: ' + x;
+			document.getElementById("Xcoordinate").textContent= x;
 			}
 		else if (direction === 4) {
 			
 			y = y-1;
-			document.getElementById("Ycoordinate").textContent='Y: ' + y;
+			document.getElementById("Ycoordinate").textContent= y;
 			}
 			
 			
