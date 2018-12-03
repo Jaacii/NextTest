@@ -10,14 +10,14 @@
 			y = y+0.1;
 			yDisplay = yDisplay+1;
 			
-			document.getElementById("Ycoordinate").textContent= y;
+			document.getElementById("Ycoordinate").textContent= y ;
 			resonanceAudioScene.setListenerPosition(x, y, z);
 			}
 		else if (direction === 1) {
 			x = x+0.1;
 			xDisplay = x+1;	//Die X-Achse ist gespiegelt. Darum - statt +
 			
-			document.getElementById("Xcoordinate").textContent=  x ;
+			document.getElementById("Xcoordinate").textContent=  ((x*-1)*10)/10 ;
 			resonanceAudioScene.setListenerPosition(x, y, z);
 			}
 		else if (direction === 2) {
@@ -34,7 +34,7 @@
 			x = x-0.1;
 			xDisplay + xDisplay - 1;
 			
-			document.getElementById("Xcoordinate").textContent= x ; 
+			document.getElementById("Xcoordinate").textContent= ((x*-1)*10)/10  ; 
 			resonanceAudioScene.setListenerPosition(x, y, z);
 			}
 		else if (direction === 4) {
