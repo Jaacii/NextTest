@@ -26,14 +26,14 @@
        
 			let roomMaterials = {
             
-            left: 'metal',
-            right: 'brick-bare',
-            front: 'brick-bare',
+            left: 'curtain-heavy',
+            right: 'curtain-heavy',
+            front: 'glass-thin',
             back: 'glass-thin',
             // Room floor
             down: 'grass',
             // Room ceiling
-            up: 'metal',
+            up: 'transparent',
         };
 
         
