@@ -1,7 +1,7 @@
 /*css*/
 
 body {
-	background-color: #83677B;
+	background-color: #44318D;
 	
 }
 
@@ -31,11 +31,11 @@ body {
 	margin-left : ;
 	border: 3px gray68;
 	float: left;
-	width: 330px;
-	height: 230px;				/*höhe */
+	width: 160px;
+	height: 115px;				/*höhe */
 			
 	display:  inline-block;		/*positioniert sich nebeneinander wenn möglich */
-	background-color: #501B1D;
+	background-color: #D83F87;
 	text-align: center;
 	
 }
@@ -46,11 +46,12 @@ body {
 	float: both;
 	width: 180px;
 	height: 180px;
-	margin-left: 800px;  /*Die Anordnung zur Mitte geht auch anders und genauer. Sollte später noichmal geändert werden*/
-	margin-right: 800px;
+	margin-left: 0px;  /*Die Anordnung zur Mitte geht auch anders und genauer. Sollte später noichmal geändert werden*/
+	margin-right: 0px;
 	margin-top: 30px;	
 	font-size:24px;
 	background: "url (Pictures/play.png)";
+	background-color: #A4B3B6;
 	
 }
 
@@ -60,12 +61,7 @@ body {
 
 /*Equalizer*/
 .Equalizer {
-	display:  inline-block;		/*positioniert sich nebeneinander wenn möglich */
-	/*background-color: Blue ;*/
-	float: both;
-	width: 90%;
-	height: 460px;
-	text-align: center;
+
 }
 
 .slider {
