@@ -7,28 +7,18 @@ body {
 
 
 
-
-
-.MoveY {
-	width: 150px;
-	height: 150px;	
-	margin-right: 154px;
-	margin-left:154px;
-	
-	
-}
-.MoveX {
-	width: 150px;
-	height: 150px;	
-	
-	
-}
-
+/*------------------------*/
 
 /*Noisemaker*/
+.header {						/*contains Noisemaker*/
+	width: 100%;
+	height: 131px;	
+}
+
+
 .Noisemaker {
-	margin-right: 10px;
-	margin-left : ;
+	padding-top: 8px;
+	padding-bottom: 8px;
 	border: 3px gray68;
 	float: left;
 	width: 160px;
@@ -39,6 +29,9 @@ body {
 	text-align: center;
 	
 }
+/*------------------------*/
+
+
 
 
 /*PlayButton*/
@@ -57,17 +50,44 @@ body {
 
 
 
+/*------------------------*/
+
+/* MoveButtons*/
+.3dAudioBox {					
+	width: 50%;
+	height: 460px;
+	float: left;
+}
+
+.MoveY {
+	width: 150px;
+	height: 150px;	
+	margin-right: 154px;
+	margin-left:154px;
+	
+	
+}
+.MoveX {
+	width: 150px;
+	height: 150px;	
+	
+	
+}
 
 
-/*Equalizer*/
-.Equalizer {
+
+/*------------------------*/
+
+/*Equalizer      contains Slider*/
+.EqualizerBox {					
 	display:  inline-block;		/*positioniert sich nebeneinander wenn möglich */
 	/*background-color: Blue ;*/
 	float: both;
-	width: 40%;
+	width: 50%;
 	height: 460px;
 	text-align: center;
 }
+
 
 .slider {
 	text-align: center;
@@ -100,3 +120,4 @@ body {
     background: #2E1114;
     cursor: pointer;
 }
+/*------------------------*/
