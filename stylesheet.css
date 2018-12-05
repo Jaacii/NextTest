@@ -99,7 +99,7 @@ body {
 
 /*Equalizer      contains Slider*/
 #EqualizerBox {					
-	
+	display: inline-block;
 	/*background-color: Blue ;*/
 	float: both;
 	width: 40%;
