@@ -67,6 +67,7 @@ body {
 	padding:10px;
 	margin-top: 60px;
 	overflow: hidden; 
+	margin-left: 30px;
 }
 
 .MoveY {
@@ -94,7 +95,8 @@ body {
 /*Equalizer      contains Slider*/
 #EqualizerBox {					
 	display: inline-block;
-	/*background-color: Blue ;*/
+	margin-left: 30px;
+	background-color: E98074  ;
 	float: both;
 	width: 40%;
 	height: 460px;
