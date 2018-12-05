@@ -46,11 +46,11 @@ body {
 	float: both;
 	width: 180px;
 	height: 180px;
-	margin-left: 800px;  /*Die Anordnung zur Mitte geht auch anders und genauer. Sollte später noichmal geändert werden*/
-	margin-right: 800px;
+	margin-left: 165px;  /*Die Anordnung zur Mitte geht auch anders und genauer. Sollte später noichmal geändert werden*/
+	margin-right: 1500px;
 	margin-top: 30px;	
 	font-size:24px;
-	background: "url (Pictures/play.png)";
+	/*background: "url (Pictures/play.png)";*/
 	background-color: #A4B3B6;
 	
 }
@@ -62,7 +62,7 @@ body {
 	border: 5px gray68;
 	color: #FFFFFF;
 	background-color: #A67FFF ;
-	margin-left: 175px;
+	margin-left: 165px;
 	margin-top: 30px;
 	font-size: 30px;
 	display: inline-block;
