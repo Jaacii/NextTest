@@ -57,7 +57,8 @@ body {
 
 #CoordinatesAndPlay{
 	width: 10%;
-	height: 5% ;
+	height: 10% ;
+	text-align: center;
 	border: 3px gray68;
 	color: #FFFFFF;
 	background-color: #A67FFF ;
