@@ -59,12 +59,13 @@ body {
 	width: 10%;
 	height: 10% ;
 	text-align: center;
-	border: 3px gray68;
+	border: 5px gray68;
 	color: #FFFFFF;
 	background-color: #A67FFF ;
-	margin-left: 205px;
+	margin-left: 195px;
 	margin-top: 30px;
 	font-size: 40px;
+	display: inline-block;
 }
 
 /*------------------------*/
