@@ -64,6 +64,7 @@ body {
 	height: 460px;
 	float: left;
 	display:  inline-block;	
+	margin-top: 30px;
 }
 
 .MoveY {
