@@ -60,7 +60,7 @@ body {
 
 /* MoveButtons*/
 .3dAudioBox {					
-	width: 50%;
+	width: 40%;
 	height: 460px;
 	float: left;
 	display:  inline-block;	
@@ -95,7 +95,7 @@ body {
 	display:  inline-block;		/*positioniert sich nebeneinander wenn möglich */
 	/*background-color: Blue ;*/
 	float: both;
-	width: 50%;
+	width: 40%;
 	height: 460px;
 	text-align: center;
 	font-size: 20px;
