@@ -74,7 +74,7 @@ body {
 	width: 150px;
 	height: 150px;	
 	
-	margin-left:154px;
+	margin-left:174px; /*154*/
 	background-color: #A4B3B6;
 	display:  inline-block;	
 	
@@ -84,7 +84,7 @@ body {
 	height: 150px;	
 	background-color: #A4B3B6;
 	display:  inline-block;	
-	
+	margin-left: 20px;
 }
 
 
