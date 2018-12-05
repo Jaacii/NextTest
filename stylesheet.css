@@ -45,8 +45,8 @@ body {
 .playbtn {
 	float: both;
 	width: 10%;
-	height: 10%; /*180px;*/
-	margin-left: 1%%px;  /*Die Anordnung zur Mitte geht auch anders und genauer. Sollte später noichmal geändert werden*/
+	height: 180px;
+	margin-left: 160px;  /*Die Anordnung zur Mitte geht auch anders und genauer. Sollte später noichmal geändert werden*/
 	margin-right: 1500px;
 	margin-top: 30px;
 		
