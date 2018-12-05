@@ -71,12 +71,14 @@ body {
 	margin-right: 154px;
 	margin-left:154px;
 	background-color: #A4B3B6;
+	display:  inline-block;	
 	
 }
 .MoveX {
 	width: 150px;
 	height: 150px;	
 	background-color: #A4B3B6;
+	display:  inline-block;	
 	
 }
 
