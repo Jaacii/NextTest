@@ -52,22 +52,24 @@
 		 
 		 
 				 
-		 <div class="3dandsliderbox">
+		 <div class="3dandsliderbox" class=mainContainer>
 		 <!-- move AudioSource	-->
 		 
-		 <div class="3dAudioBox">	
-			<input id="up" type="button" onclick="moveSource(0)"  class="MoveY" value="forward"> </input> 
-		 <div> 
+			<div class="3dAudioBox">	
+				<input id="up" type="button" onclick="moveSource(0)"  class="MoveY" value="forward"> </input> 
+				<div> 
  
-			<input id="left" type="button" onclick="moveSource(1)"  class="MoveX" value="left"> </input>
-			<input id="central" type="button" onclick="moveSource(2)"  class="MoveX" value="reset"> </input>
-			<input id="right" type="button" onclick="moveSource(3)"  class="MoveX" value="right"> </input>
-		 </div>
-		<div><input id="down" type="button" onclick="moveSource(4)"  class="MoveY" value="backward"> </input>
-		  X: <span id="Xcoordinate" class="Xloc">0</span>   
-		  Y: <span id="Ycoordinate" class="YLoc">0</span>   </div> </br>
+					<input id="left" type="button" onclick="moveSource(1)"  class="MoveX" value="left"> </input>
+					<input id="central" type="button" onclick="moveSource(2)"  class="MoveX" value="reset"> </input>
+					<input id="right" type="button" onclick="moveSource(3)"  class="MoveX" value="right"> </input>
+				</div>
+				<div>
+					<input id="down" type="button" onclick="moveSource(4)"  class="MoveY" value="backward"> </input>
+						X: <span id="Xcoordinate" class="Xloc">0</span>   
+						Y: <span id="Ycoordinate" class="YLoc">0</span>   </div> </br>
 		 <!-- Evtl regler für Z achse?	-->
-		 </div> 	
+				</div> 
+			</div>
 		
 		 
 		 
@@ -75,26 +77,26 @@
 		 
 		 
 <!-- Equalizer	-->
-		 <div class="EqualizerBox"> 	
+			<div class="EqualizerBox" class=mainContainer> 	
 		  
 			 
-			 <div id="volumeContainer">Volume
-                <input type="range" min="0" max="100" value="20" class="slider" id="volumeslider">
+				<div id="volumeContainer">Volume
+					<input type="range" min="0" max="100" value="20" class="slider" id="volumeslider">
 				
-                <span id="volumeOutput" class="output">20 db</span>
-            </div>
-            <div id="gainContainer">Gain
-                <input type="range" min="-40" max="40" value="0" class="slider" id="gainslider">
-                <span id="gainOutput" class="output">0 dB</span>
-            </div>
-            <div id="qualityContainer">Quality
-                <input type="range" min="0" max="100" value="0" class="slider" id="qualityslider">
-                <span id="qualityOutput" class="output">0</span>
-            </div>
-            <div id="frequencyContainer">Frequenz
-                <input type="range" min="0" max="100" value="0" class="slider" id="frequencyslider">
-                <span id="frequencyOutput" class="output">0</span>
-            </div>
+					<span id="volumeOutput" class="output">20 db</span>
+				</div>
+				<div id="gainContainer">Gain
+					<input type="range" min="-40" max="40" value="0" class="slider" id="gainslider">
+					<span id="gainOutput" class="output">0 dB</span>
+				</div>
+				<div id="qualityContainer">Quality
+					<input type="range" min="0" max="100" value="0" class="slider" id="qualityslider">
+					<span id="qualityOutput" class="output">0</span>
+				</div>
+				<div id="frequencyContainer">Frequenz
+					<input type="range" min="0" max="100" value="0" class="slider" id="frequencyslider">
+					<span id="frequencyOutput" class="output">0</span>
+				</div>
 			 
 			 <script src="JS/volume.js"></script> 
 			 
@@ -103,11 +105,11 @@
 			
 			
 			
-		 </div>	
+			</div>	
 			
 		
 		 
-	</div>
+		
 
 		
 		 
