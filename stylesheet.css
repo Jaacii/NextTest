@@ -46,7 +46,7 @@ body {
 	float: both;
 	width: 180px;
 	height: 180px;
-	/*margin-left: 800px; */ /*Die Anordnung zur Mitte geht auch anders und genauer. Sollte später noichmal geändert werden*/
+	margin-left: 800px;  /*Die Anordnung zur Mitte geht auch anders und genauer. Sollte später noichmal geändert werden*/
 	margin-right: 800px;
 	margin-top: 30px;	
 	font-size:24px;
