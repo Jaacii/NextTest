@@ -7,7 +7,7 @@
 				
 				if (onOff == 0) {
 					audioElement2.src = songs[select];
-					initMp3Player();
+				
 					audioElement2.play();
 					//audioElement2.volume = volumeslider.value / 100;
 					//Pic change
