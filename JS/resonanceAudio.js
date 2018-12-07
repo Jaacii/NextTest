@@ -62,7 +62,7 @@
 		
 		
 		var canvas, ctx, source, context, analyser, fbc_array, bars, bar_x, bar_width, bar_height;
-		window.addEventListener("load", initMp3Player, false);
+		//window.addEventListener("load", initMp3Player, false);
 		
 		
 		
