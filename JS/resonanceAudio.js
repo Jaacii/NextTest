@@ -69,14 +69,14 @@
 		
 		
 		function initMp3Player(){
-	document.getElementById('audio_box').appendChild(audioElementSource2);
+	document.getElementById('audio_box').appendChild(audioElement2);
 	context = new webkitAudioContext(); // AudioContext object instance
 	analyser = context.createAnalyser(); // AnalyserNode method
 	canvas = document.getElementById('analyser_render');
 	ctx = canvas.getContext('2d');
 
 	// Re-route audio playback into the processing graph of the AudioContext
-	source = context.createMediaElementSource(audioElementSource2); 
+	source = context.createMediaElementSource(audioElement2); 
 	source.connect(analyser);
 	analyser.connect(context.destination);
 	frameLooper();
