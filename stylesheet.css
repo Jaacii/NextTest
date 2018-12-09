@@ -19,7 +19,10 @@ body {
 	height: 160px;	
 	background-color: #2A1B3D;
 }
-
+.secondheader {
+	width: 100%;
+	background-color: #D83F87;
+}
 
 .Noisemaker {
 	
