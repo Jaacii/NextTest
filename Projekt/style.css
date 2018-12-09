@@ -4,21 +4,12 @@ body {
 	padding:0;
 	font-family: sans-serif;
 }
-.header {						
+.secondheader {
 	width: 100%;
 	background-color: #D83F87;
-}
-#playStopButton {
-    background-color: #de793a;
-    border: none;
-    color: #ffffff;
-    font-size: 1.5em;
-    padding: 0.5em 1.5em;
+	font-size: 1.5em;
 }
 
-#playStopButton:active {
-   background: #ffffff;
-}
 
 div {
     font-size: 1.5em;
@@ -26,18 +17,7 @@ div {
 
 
 
-.playStopButton {
-    background-color: #e09236;
-    border: none;
-    color: #ffffff;
-    font-size: 0.8em;
-    padding: 0.5em 1.5em;
-    font-size: 2em;
-}
 
-.playStopButton:active {
-   background: #ffffff;
-}
 
 #canvas {
 	position: absolute;
@@ -45,6 +25,8 @@ div {
 	left: 400px;
 	background-color: #135056;
 	background-image: url("background1.png")
+	
+	
 }
 
 #status {

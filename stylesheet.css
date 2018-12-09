@@ -22,6 +22,7 @@ body {
 .secondheader {
 	width: 100%;
 	background-color: #D83F87;
+	font-size: 1.5em;
 }
 
 .Noisemaker {
@@ -162,3 +163,7 @@ body {
     cursor: pointer;
 }
 /*------------------------*/
+
+.bars {
+	top: 100;
+}
