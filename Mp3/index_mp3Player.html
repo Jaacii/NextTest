@@ -36,6 +36,7 @@ function initMp3Player(){
 	source = context.createMediaElementSource(audio); 
 	source.connect(analyser);
 	analyser.connect(context.destination);
+	source.volume = 0.5;
 	frameLooper();
 }
 // frameLooper() animates any style of graphics you wish to the audio frequency

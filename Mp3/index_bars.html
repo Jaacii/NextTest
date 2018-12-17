@@ -34,6 +34,7 @@ const dataArray = new Float32Array(bufferLength);
 //Set up audio node network
 audioSourceNode.connect(analyserNode);
 analyserNode.connect(audioCtx.destination);
+audioSourceNode.volume = 0.5;
 
 //Create 2D canvas
 //const canvas = document.createElement('canvas');
