@@ -15,7 +15,7 @@
 	var imageBitmaps = []
 	var imagePointer = 0
 
-	var audioPaths = ["res/snd-01.ogg", "../Audio/footsteps.wav"]
+	var audioPaths = ["../Audio/footsteps.wav"]
 	var audioBuffers = []
 	var audioRequest = new XMLHttpRequest()
 	var audioPointer = 0
